@@ -22,3 +22,8 @@ fs.rename("sample.txt", "test.txt", (err) => {
     if (err) throw err;
     console.log("File name Updated!");
 });
+
+fs.unlink("test.txt", (err) => {
+    if (err) throw err;
+    console.log("File test.txt deleted successfully!");
+});
