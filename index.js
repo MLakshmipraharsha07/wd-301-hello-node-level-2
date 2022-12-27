@@ -1,5 +1,14 @@
-function hello(){
-    console.log("Hello Node.JS");
-    console.log("I am in level 2 of my course");
-}
-hello();
+const fs = require("fs");
+fs.writeFile(
+    "sample.txt",
+    "Hello World. Welcome to Node.JS File system module.",
+    (err) => {
+        if (err) throw err;
+        console.log("File created!");
+    }
+);
+
+fs.readFile("sample.txt", (err,data) => {
+    if (err) throw err;
+    console.log(data.toString());
+});
