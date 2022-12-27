@@ -1,4 +1,6 @@
 const fs = require("fs");
+const http = require("http");
+
 fs.writeFile(
     "sample.txt",
     "Hello World. Welcome to Node.JS File system module.",
@@ -27,3 +29,10 @@ fs.unlink("test.txt", (err) => {
     if (err) throw err;
     console.log("File test.txt deleted successfully!");
 });
+
+const server = http.createServer((req,res) => {
+    fs.readFile("example.txt", (err,data) => {
+        res.end(data);
+    })
+});
+server.listen(3000);
