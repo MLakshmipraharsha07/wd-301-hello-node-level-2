@@ -11,8 +11,8 @@ fs.writeFile(
 );
 
 fs.readFile("sample.txt", (err,data) => {
-    if (err) throw err;
-    console.log(data.toString());
+   // if (err) throw err;
+    //console.log(data.toString());
 });
 
 fs.appendFile("sample.txt", "This is my updated content", (err) => {
@@ -31,8 +31,7 @@ fs.unlink("test.txt", (err) => {
 });
 
 const server = http.createServer((req,res) => {
-    fs.readFile("example.txt", (err,data) => {
-        res.end(data);
-    })
+    const stream = fs.createReadStream("example.txt");
+    stream.pipe();
 });
 server.listen(3000);
