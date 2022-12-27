@@ -17,3 +17,8 @@ fs.appendFile("sample.txt", "This is my updated content", (err) => {
     if (err) throw err;
     console.log("File Updated!");
 });
+
+fs.rename("sample.txt", "test.txt", (err) => {
+    if (err) throw err;
+    console.log("File name Updated!");
+});
