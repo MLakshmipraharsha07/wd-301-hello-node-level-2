@@ -32,6 +32,6 @@ fs.unlink("test.txt", (err) => {
 
 const server = http.createServer((req,res) => {
     const stream = fs.createReadStream("example.txt");
-    stream.pipe();
+    stream.pipe(res);
 });
 server.listen(3000);
